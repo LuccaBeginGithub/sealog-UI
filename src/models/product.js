@@ -1,0 +1,57 @@
+export default [
+    {name:'Sheraton Denarau Villas',
+    price:626,
+    location:'Fiji',
+    discountPrice:598,
+    category:'hotel',
+    src:'assets/images/sheraton-villas.png'
+}, 
+{name:'Fiji Gateway Hotel',
+    price:152,
+    location:'Fiji',
+    discountPrice:149,
+    category:'hotel',
+    src:'assets/images/fijigateawayhotel.jpg'
+}, 
+{name:'Bua Bed & Breakfast',
+    price:61,
+    location:'Fiji',
+    discountPrice:57,
+    category:'house',
+    src:'assets/images/buabed.jpg'
+},
+{name:'Radisson Blu Resort Fiji Denarau Island',
+price:294,
+location:'Fiji',
+discountPrice:290,
+category:'resort',
+src:'assets/images/Radisson.jpg'
+}, 
+{name:'The Royal at Atlantis',
+price:356,
+location:'Bahamas',
+discountPrice:301,
+category:'hotel',
+src:'assets/images/theloyalatatlantis.jpg'
+}, 
+{name:'Four Seasons Resort Bora Bora',
+price:1743,
+location:'Bora Bora',
+discountPrice:1707,
+category:'resort',
+src:'assets/images/fourSeasons.jpg'
+}, 
+{name:'Bora Bora Pearl Beach Resort and Spa',
+price:793,
+location:'Bora Bora',
+discountPrice:703,
+category:'resort',
+src:'assets/images/PearlBeachResort.jpg'
+},
+{name:'Kamalame Cay',
+price:493,
+location:'Bahamas',
+discountPrice:465,
+category:'hotel',
+src:'assets/images/kamalame-cay.jpg'
+}]
