@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b0fd1c2a-79e9-4f60-bcae-712f609ec4ce/resourceGroups/sealog-RG/providers/Microsoft.Web/sites/sealog",
+    "appService.deploySubpath": "build"
+}
