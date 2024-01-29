@@ -7,18 +7,21 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CustomButton } from '../Custom/CustomButton';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 
 const Container = styled.section`
     margin:0rem 4.5rem;
     background-color:#F3F3F3;
     border-radius:2.6rem;
     padding: 4.5rem 3rem;
-    ${mobile({margin:'0rem 2rem',padding:'3rem 2.5rem'})}
+    ${media.mobile`
+        margin:0rem 2rem;
+        padding:3rem 2.5rem;`}
     `;
 
 const StyledSlider = styled(Slider)`
-  margin-top:5rem;`
+  margin-top:5rem;
+  `
 ;
 const ViewAll = styled.div`
   display: flex;
@@ -30,13 +33,25 @@ const HotelSection = () => {
     slidesToShow: 4,
     slidesToScroll:2,
     dots:true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     responsive:[{
-      breakpoint: 620,
+      breakpoint: 520,
       settings:{
         slidesToScroll:1,
         slidesToShow:1
+      }
+    },{
+      breakpoint:1025,
+      settings:{
+        slidesToScroll:1,
+        slidesToShow:3
+      }
+    },{
+      breakpoint:825,
+      settings:{
+        slidesToScroll:1,
+        slidesToShow:2
       }
     }]
   }

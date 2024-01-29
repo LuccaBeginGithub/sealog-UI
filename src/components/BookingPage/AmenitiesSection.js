@@ -8,10 +8,18 @@ import LocalParkingOutlinedIcon from '@mui/icons-material/LocalParkingOutlined';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
+import media from '../../utilis/responsiveness';
 
-
+const Container = styled.section`
+    margin-top:5.5rem;
+    ${media.mobile`
+    margin-top:0;`}
+    `;
 const Title = styled.h2`
     font-size:2.4rem;
+    ${media.mobile`
+    font-size:1.4rem;
+    margin-top:0;`}
 `;
 const AmenitiesWrapper = styled.div`
     display:flex;
@@ -44,11 +52,14 @@ const AmenitiesText = styled.p`
     font-size:1.5rem;
     color:gray;
     margin-left:2rem;
+    ${media.mobile`
+    font-size:1.2rem;
+    margin-top:0;`}
     `;
 
 const AmenitiesSection = () => {
   return (
-    <div style={{marginTop:'5.5rem'}}>
+    <Container style={{marginTop:'5.5rem'}}>
             <Title>
                 Amenities
             </Title>
@@ -108,7 +119,7 @@ const AmenitiesSection = () => {
                     </Item>
                 </Column2>
             </AmenitiesWrapper>
-        </div>
+        </Container>
   )
 }
 

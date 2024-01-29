@@ -2,7 +2,7 @@ import React from 'react';
 import {styled} from 'styled-components';
 import { CustomButton } from '../Custom/CustomButton';
 import PersonIcon from '@mui/icons-material/Person';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 import { NavLink,Link} from 'react-router-dom';
 
 
@@ -18,7 +18,9 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 2rem 7rem;
-    ${mobile({margin: '2rem 2.5rem',})}
+    ${media.mobile`
+        padding: 2rem 1rem;
+        `}
 `;
 
 const Logo = styled.div`
@@ -28,8 +30,10 @@ const Logo = styled.div`
 const Image = styled.img`
     width:178px;
     height:55px;
-    ${mobile({width:'120px',
-    height:'42px',})}
+    ${media.mobile`
+        width: 12rem;
+        height:4rem;
+        `}
 `;
 
 const RightNav = styled.div`
@@ -51,14 +55,18 @@ const IconContainer = styled(NavLink)`
 `;
 const ButtonLayout = styled.div`
         display:${(props) => props.hasButton };
-        ${mobile({display:'none',})}`;
+        ${media.ipadAir`
+            display:none;
+        `}
+        `;
 
 const StyledNavLink = styled(NavLink)`
 background-color:transparent;
 border-radius:18px;
 border: 1px solid #2D9596;
 padding: 0.8rem 2rem;
-
+display:inline-block;
+margin-right:2.5rem;
 text-decoration:none;
 text-align:center;
     color:#2D9596;
@@ -72,9 +80,21 @@ text-align:center;
    border-color:#F2FFE9;
   }
    `;
+const NavBar = styled.div`
+    width:90%;
+    overflow-x:auto;
+    padding-left:3rem;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none; /* IE and Edge */
+    &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+    ${media.mobile`
+        padding-left:0.5rem;`}
+    `;
 
-
-function HeaderSection({hasButton}) {
+function HeaderSection() {
   return (
     <Container>
         <Wrapper>
@@ -84,7 +104,7 @@ function HeaderSection({hasButton}) {
                 />
             </Logo>
             <RightNav>
-                <ButtonLayout hasButton = {hasButton}>
+                <ButtonLayout >
                 <Link to="/stays">
                 <CustomButton 
                     title={'find your favorites'} 
@@ -98,12 +118,12 @@ function HeaderSection({hasButton}) {
             </RightNav>
             </Wrapper>
     <nav>
-            <div style={{display:'flex',justifyContent:'space-around',width:'70%'}}>
+            <NavBar >
                 <StyledNavLink to="/" >Home</StyledNavLink>
                 <StyledNavLink to="/stays">Stays</StyledNavLink>
                 <StyledNavLink to="/restaurants">Restaurants&Cafe</StyledNavLink>
                 <StyledNavLink to="/todo">Things to do</StyledNavLink>
-            </div>
+            </NavBar>
   </nav>
         
 

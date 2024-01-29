@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { mobile } from '../../utilis/responsiveness';
+import media  from '../../utilis/responsiveness';
 
 
 
@@ -13,6 +13,7 @@ const Button = styled.button`
       background-color:#2D9596;
       color: white;
     }
+
 `;
 
 const Text = styled.p`
@@ -20,7 +21,10 @@ const Text = styled.p`
     padding: ${(props) => props.padding || '0.5rem 1rem'};
     font-weight: ${(props) => props.fontWeight || 'bold'};
     font-weight: ${(props) => props.fontWeight || 'bold'};
-    ${mobile({padding:'0rem 0.75rem',fontSize:'1.2rem'})}
+    ${media.mobile`
+      padding:0rem 0.75rem;
+      font-size:1.2rem;
+      `}
 `;
 
 export const CustomButton = ({title, backgroundColor, borderRadius, border, fontSize, padding, titleColor,fontWeight}) => {

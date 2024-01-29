@@ -3,14 +3,17 @@ import styled from 'styled-components'
 import { CustomHeader } from '../Custom/CustomHeader';
 import CustomContentCard from '../Custom/CustomContentCard';
 import destination from '../../models/destination';
-import { mobile } from '../../utilis/responsiveness';
+import  media  from '../../utilis/responsiveness';
 
 const Container = styled.section``;
 const CardGrid = styled.div`
   display:grid;
   grid-template-columns:repeat(3, 1fr);
   padding: 0rem 3rem 1.5rem 1.5rem;
-  ${mobile({gridTemplateColumns:'repeat(1,1fr)'})}
+  ${media.mobile`
+    grid-template-columns:repeat(1,1fr);
+  `
+  }
   `;
 const HeaderWrapper = styled.div`
   display:${props=>props.Header};

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StarIcon from '@mui/icons-material/Star';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 
 const Container = styled.div`
     width: 25rem;
@@ -10,14 +10,20 @@ const Container = styled.div`
     border-radius: 1.2rem;
     overflow: hidden;
     height: 37rem;
-    ${mobile({width:'29rem'})}
+    ${
+        media.mobile`
+        width:29rem;
+    `}
     `;
 
 const Image = styled.img`
     width:25rem;
     height:20rem;
     object-fit:cover;
-    ${mobile({width:'29rem'})}
+    ${
+        media.mobile`
+         width:29rem;
+    `}
     `;
 const DetailsBar = styled.div`
    padding: 0.3rem 1.3rem;

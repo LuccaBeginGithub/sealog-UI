@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
 import { createPerson } from '../services/api';
-import axios from 'axios';
 import { useNavigate,Link } from 'react-router-dom';
+import media from '../utilis/responsiveness';
 
 
 
@@ -21,6 +21,8 @@ const LoginCard = styled.div`
   border: 2px solid #9AD0C2;
   box-shadow: 2px 2px 8px #2D9596; 
   padding: 3rem 2.5rem;
+  ${media.mobile`
+    padding-top:1.5rem;`}
   `;
 
 const Form = styled.form`
@@ -31,7 +33,9 @@ const Form = styled.form`
 `;
 
 const InfoColumnWrapper = styled.div`
-  margin: 2.5rem 1rem 0 0;`;
+  margin: 2.5rem 1rem 0 0;
+  ${media.mobile`
+    margin-top:1.5rem;`}`;
 
 const Label = styled.label`
   font-size:1.8rem;

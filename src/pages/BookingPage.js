@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
 import product from '../models/product';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { CustomHeader } from '../components/Custom/CustomHeader';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StarIcon from '@mui/icons-material/Star';
@@ -12,10 +12,13 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BedIcon from '@mui/icons-material/Bed';
 import { addBookingsByEmail } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import media from '../utilis/responsiveness';
 
 
 const Conatiner = styled.div`
  padding: 0rem 8.5rem 0rem 8.5rem;
+ ${media.mobile`
+    padding: 0 1.5rem 0 1.5rem;`}
 `;
 const LocationText = styled.p`
 color:gray;
@@ -38,10 +41,18 @@ const ImageBox = styled.div`
     display:flex;
     height:60rem;
     margin-top:1rem;
+    ${media.ipadAir`
+    height:45rem;`}
+    ${media.mobile`
+        flex-direction:column;
+        height:auto;`}
     `;
 const MainImage = styled.div`
     flex: 2.5;
     padding-right: 1.5rem;
+    ${media.mobile`
+        padding-right: 0;
+        height:24rem;`}
     ;
 `;
 
@@ -51,6 +62,12 @@ const SubImage = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    ${media.ipadAir`
+    height:45rem;`}
+    ${media.mobile`
+    flex-direction:row;
+    height:auto;
+    margin-top:0.5rem;`}
     
 `;
 
@@ -63,9 +80,19 @@ const Image = styled.img`
 const ImageSmall = styled.img`
     height:18.8rem;
     border-radius:1.2rem;
+    ${media.ipadAir`
+    height:14rem;`}
+    ${media.mobile`
+    height:8rem;
+    width:11.5rem;
+    border-radius:8px;`}
+    
 `;
 const Wrapper = styled.div`
     display:flex;
+    ${media.ipadAir`
+    flex-direction:column;
+    justify-content:center;`}
 `;
 const DetailsWrapper = styled.div`
     flex:3;
@@ -74,6 +101,8 @@ const BookingFormWrapper = styled.div`
     flex:2;
     display:flex;
     justify-content:flex-end;
+    ${media.ipadAir`
+    justify-content:center;`}
 `;
 const Description = styled.p`
     color:gray;
@@ -82,6 +111,12 @@ const Description = styled.p`
     margin-top:5.5rem;
     padding-right:2rem;
     text-align:justify;
+    ${media.mobile`
+    font-size:11px;
+    margin-top:2.5rem;
+    padding-right:0;
+    margin-bottom:0;
+    `}
     `;
 const BookingForm = styled.div`
     width:35rem;

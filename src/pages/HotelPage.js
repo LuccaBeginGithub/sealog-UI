@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import DefaultInfoSection from '../components/HotelPage/DefaultInfoSection';
-import { mobile } from '../utilis/responsiveness';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
@@ -9,21 +8,36 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BedIcon from '@mui/icons-material/Bed';
 import SearchResultPage from '../components/HotelPage/SearchResultPage';
 import ProductPageHeroSection from '../components/Layout/ProductPageHeroSection';
+import media from '../utilis/responsiveness';
 
-
+const FormWrapper = styled.div`
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:-2rem;
+  position:absolute;
+`;
 
 
 const StyledForm = styled.form`
   display:flex;
   width:70%;
-  margin: -2rem 0rem 15% 15%;
   height:50px;
   background-color:#F4CE14;
   position:absolute;
   padding:0.3rem;
   border-radius:0.5rem;
- justify-content:space-evenly;
+  justify-content:space-evenly;
   align-items:center;
+  ${media.ipad`
+        width:80%;`}
+  ${media.ipadAir`
+        width:100%;`}
+  ${media.mobile`
+        flex-direction:column;
+        height:105px;
+        align-items:flex-start;
+        padding-left:20px;`}
   `;
 
 const FormButton = styled.button`
@@ -42,17 +56,30 @@ const DateSelector = styled.div`
   display:flex;
   align-items:center;
   height:100%;
-  justify-content:space-evenly;`;
+  justify-content:space-evenly;
+`;
 
 const RoomSelector = styled.div`
   display:flex;
   justify-content:flex-start;
   align-items:center;
-
- 
   `; 
-
-
+const StyledDatePicker = styled(DatePicker)`
+width:10rem;
+text-align:center;
+color:gray;
+padding:0.4rem 1rem 0.4rem 1rem;
+border-radius:8px;
+border: 1px solid gray;
+outline:none;
+`;
+const StyledSelect = styled.select`
+width:14rem;
+text-align:center;
+color:gray;
+border-radius:8px;
+border: 1px solid gray;
+outline:none;`;
 const HotelPage = () => {
   const [location, setLocation] = useState();
   const [checkInDate, setCheckInDate] = useState(new Date(2024,1,20));
@@ -112,18 +139,18 @@ const HotelPage = () => {
     }
   };
   return (
-    <div>
+    <main >
 
       <ProductPageHeroSection src = {'assets/images/hotelragehero.jpg'}
         title={' Holiday Rentals all over the world'} 
         subtitle={'hotels, houses, resorts, yacht and more'}/>
-
-      <StyledForm onSubmit={handleSubmit}>
+      <FormWrapper>
+          <StyledForm onSubmit={handleSubmit}>
       <RoomSelector>
         
         {/* <Label>Location:</Label> */}
         <LocationCityIcon color='action' style={{marginRight:'1rem',fontSize:'2.2rem'}}/>
-        <select value={location} onChange={handleLocationChange}>
+        <StyledSelect value={location} onChange={handleLocationChange}>
           <option value="" style={{color:'#EE9322'}}>Select Location</option>
           <option value="Fiji">Fiji</option>
           <option value="Bahamas">Bahamas</option>
@@ -131,21 +158,22 @@ const HotelPage = () => {
           <option value="Tahiti">Tahiti</option>
           <option value="Maldive">Maldive</option>
           <option value="Mauritius">Mauritius</option>
-        </select>
+        </StyledSelect>
       </RoomSelector>
       <DateSelector>
         {/* <Label>Check-in Date:</Label> */}
         <CalendarMonthIcon color='action' style={{marginRight:'1rem',fontSize:'2.2rem'}}/>
-        <DatePicker
+        <StyledDatePicker
           selected={checkInDate}
           onChange={handleCheckInChange}
           dateFormat="MM/dd/yyyy"
+
         />
 
       <hr width='5px' fontWeight='2px' dir="rtl"/>
    
         {/* <Label >Check-out Date:</Label> */}
-        <DatePicker
+        <StyledDatePicker
           selected={checkOutDate}
           onChange={handleCheckOutChange}
           dateFormat="MM/dd/yyyy"
@@ -164,8 +192,10 @@ const HotelPage = () => {
       </RoomSelector>
       <FormButton type="submit" >Search</FormButton>
     </StyledForm>
+    </FormWrapper>
+
       {content}
-    </div>
+    </main>
   );
 }
 

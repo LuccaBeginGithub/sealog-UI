@@ -2,20 +2,27 @@ import React from 'react'
 import styled from 'styled-components';
 import CustomInput from '../Custom/CustomInput';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 
 const Container = styled.section`
     margin-top:10rem;
-    /* ${mobile({marginTop:'4.5rem'})} */
+    ${media.mobile`
+       margin-top:4.5rem;
+        `}
     `;
 const Content = styled.div`
   padding: 7.5rem 4.5rem;
   display:flex;
-  /* ${mobile({flexDirection:'column',padding:'3.5rem 4.5rem'})} */
+    ${media.ipad`
+        padding: 3.5rem 4.5rem;
+        flex-direction:column;
+        `}
  `;
 const Declare = styled.div`
 margin-left:4.5rem;
-/* ${mobile({marginTop:'4rem'})} */
+    ${media.mobile`
+        margin-top:4rem;
+        `}
 `;
 const Right = styled.p`
   color:gray;`;
@@ -25,7 +32,9 @@ const Text = styled.a`
   display:inline-block;
   color:gray;
   font-size:1.5rem;
-  /* ${mobile({padding:'1.5rem 1rem'})} */
+  ${media.mobile`
+        padding:1.5rem 1rem;
+        `}
   `;
 const Logo = styled.div`
   flex:1;`;

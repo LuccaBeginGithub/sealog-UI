@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {GetPersonByEmail} from '../services/api';
+import media from '../utilis/responsiveness';
 
 const Container = styled.div`
  margin: 0 2.5rem;
@@ -29,7 +30,9 @@ const Form = styled.form`
 `;
 
 const InfoColumnWrapper = styled.div`
-  margin: 2.5rem 1rem 0 0;`;
+  margin: 2.5rem 1rem 0 0;
+  ${media.mobile`
+    margin-top:1.5rem;`}`;
 
 const Label = styled.label`
   font-size:1.8rem;

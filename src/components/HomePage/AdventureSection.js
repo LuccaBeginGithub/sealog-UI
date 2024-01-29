@@ -39,6 +39,12 @@ const AdventureSection = () => {
                 slidesToShow: 1,
                 slidesToScroll: 1,
             }
+        },{
+            breakpoint:825,
+            settings:{
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
         }],
     };
   return (

@@ -11,8 +11,8 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-    width: ${(props) => props.Width || '34rem' };
-    height: ${(props) => props.Height || '34rem' };
+    width: ${(props) => props.Width ||'100%' };
+    height: ${(props) => props.Height ||'28rem'  };
     object-fit: cover;
     `;
 

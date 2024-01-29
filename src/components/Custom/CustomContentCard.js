@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import CustomImageCard from './CustomImageCard';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { mobile } from '../../utilis/responsiveness';
 
 
 const Container = styled.div`
@@ -31,9 +30,6 @@ const LocationText = styled.p`
 const ImageContainer = styled.div`
     border-radius: 2rem;
     overflow:hidden;
-    width: 34rem;
-    height: 34rem;
-    ${mobile({width:'31rem'})}
     `;
 
 

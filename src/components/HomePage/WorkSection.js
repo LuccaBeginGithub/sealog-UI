@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CustomHeader } from '../Custom/CustomHeader';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 
 const Container = styled.section`
 `;
@@ -9,15 +9,17 @@ const ContentWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 6rem 3rem;
-    ${mobile({margin:'3rem',flexDirection:'column'})}
-
+    ${media.mobile`
+        margin: 3rem;
+        flex-direction:column;
+        `}
 `;
 const Content = styled.div`
     justify-content: center;
     text-align: center;
-    ${mobile({margin:'1.2rem'})}
-
-    
+    ${media.mobile`
+        margin: 1.2rem;
+        `}
         `;
 const Image = styled.img`
     width:13rem;
@@ -30,13 +32,11 @@ margin-bottom: 2.8rem;
 `;
 const Text = styled.p`
     font-size:2.3rem;
-    /* ${mobile({fontSize:'1.7rem',marginBottom:'0.5rem'})} */
 
     ;`;
 const TextDesc = styled.p`
     font-size:1.8rem;
     color: gray;
-    /* ${mobile({fontSize:'1.2rem'})} */
 
     `;
 

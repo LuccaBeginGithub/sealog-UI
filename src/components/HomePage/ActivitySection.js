@@ -6,14 +6,16 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomActivityCard from '../Custom/CustomActivityCard';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 
 const Container = styled.section`
   margin-top:8rem;
   `;
 const StyledSlider = styled(Slider)`
   margin:6rem 4.5rem;
-  ${mobile({margin:'2.5rem 4.5rem'})}
+  ${   media.mobile`
+       margin:'2.5rem 4.5rem';
+    `}
   `
 ;
 const ActivitySection = () => {
@@ -21,13 +23,20 @@ const ActivitySection = () => {
         slidesToShow: 3,
         slidesToScroll:2,
         speed: 500,
+        dots:true,
         responsive:[{
           breakpoint:620,
           settings:{
             slidesToShow: 1,
             slidesToScroll:1,
           },
-        },]
+        },{
+          breakpoint:825,
+          settings:{
+            slidesToShow: 2,
+            slidesToScroll:1,
+          },
+        }]
       }
   return (
     <Container>

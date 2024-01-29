@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import { mobile } from '../../utilis/responsiveness';
+import media from '../../utilis/responsiveness';
 
 const InputWrapper = styled.div`
     position: absolute;
@@ -15,7 +15,10 @@ const InputBox = styled.input`
     border: 1.5px solid gray;
     padding-left: 2rem;
     color: gray;
-    ${mobile({width:'26rem'})}
+    ${
+        media.mobile`
+        width:26rem;
+    `}
     `;
 const IconWarpper = styled.div`
     position:relative;

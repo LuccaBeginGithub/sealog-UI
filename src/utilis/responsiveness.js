@@ -1,12 +1,29 @@
 import { css } from "styled-components";
 
 const sizes = {
-    mobile:620,};
+    xs:'520px',
+    s:'825px',
+    m:'1025px',
 
-export const mobile = (props) => {
-    return css`
-    @media only screen and (max-width : ${sizes.mobile}px ) {
-        ${props}
-    }
-    `;
 };
+
+const media = {
+    mobile: (...args) => css`
+    @media (max-width: ${sizes.xs}){
+        ${css(...args)}
+    }
+    `,
+    ipad: (...args) => css`
+    @media (max-width:${sizes.m}){
+        ${css(...args)}
+    }`
+    ,
+    ipadAir:(...args) => css`
+    @media (max-width:${sizes.s}){
+        ${css(...args)}
+    }`
+    ,
+}
+
+export default media;
+;

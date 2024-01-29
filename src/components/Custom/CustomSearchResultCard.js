@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import StarIcon from '@mui/icons-material/Star';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link, useNavigate } from 'react-router-dom';
-
+import media from '../../utilis/responsiveness';
 
 
 
@@ -17,6 +17,12 @@ const Container = styled.div`
  padding:1rem;
  display:flex;
  margin-bottom: 3.5rem;
+ ${media.ipad`
+ width:83%;`}
+ ${media.ipadAir`
+ width:98%;`}
+ ${media.mobile`
+    padding:5px;`}
 `;
 const ImageWrapper = styled.div`
     width:100%;
@@ -28,7 +34,9 @@ const ImageWrapper = styled.div`
 
 const TextWrapper = styled.div`
     flex:2;
-    padding:1rem;`;
+    padding:1rem;
+    ${media.mobile`
+    padding:5px;`}`;
 
 const Image = styled.img`
     width:110%;
@@ -53,6 +61,8 @@ const PassInfoWrapper = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    ${media.mobile`
+    margin-top:-2rem;`}
     `;
 
 const DescriptionWarpper = styled.div``;
@@ -62,6 +72,9 @@ font-size:2.2rem;
 color:#265073;
 margin:0;
 cursor: pointer;
+${media.mobile`
+    font-size:1.2rem;
+`}
    `;
 const Rating = styled.div`
     display: flex;
@@ -108,8 +121,17 @@ text-align:center;
    background-color: #A6CF98; 
    color:#F2FFE9;
    border-color:#F2FFE9;
-  }
+  } 
+${media.mobile`
+    padding:0 10px;
+    font-size:11px;
+    border-radius:10px;`}
    `; 
+const Des = styled.p`
+    color:gray;
+    ${media.mobile`
+    font-size:10px;
+`}`;
 
 const CustomSearchResultCard = ({item}) => {
     const{name,price,location,discountPrice,category,src} = item;
@@ -166,9 +188,9 @@ const CustomSearchResultCard = ({item}) => {
                 </PassInfoWrapper>
             </DetailsWrapper>
             <DescriptionWarpper>
-                <p style={{color:'gray'}}>This is the description text. Replace this with the description of the product.
+                <Des >This is the description text. Replace this with the description of the product.
                 The location of your hotel is perfect. It's conveniently situated near popular attractions,
-                 making it easy for us to explore the area. The views from our room were stunning. </p>
+                 making it easy for us to explore the area. The views from our room were stunning. </Des>
             </DescriptionWarpper>
         </TextWrapper>
     </Container>
