@@ -5,7 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CustomHeader } from '../Custom/CustomHeader';
 
-const Container = styled.section``;
+const Container = styled.section`
+    width:100%;
+    overflow-x: hidden;
+    `;
 
 
 const SliderBar = styled(Slider)`

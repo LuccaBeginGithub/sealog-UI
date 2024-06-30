@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiURL =  'https://localhost:5000/api/personinfo';
+const apiURL =  'https://sealogbackendapi.azurewebsites.net/api/personinfo';
 
 export const createPerson = async (data) => {
   try {

@@ -13,9 +13,9 @@ export const HomePage = () => {
 
     <HeroSectionOne/>
     <AdventureSection/>
-    <DestinationSection/>
+    <DestinationSection/> 
     <HotelSection/>
-    <HeroSectionTwo/>
+    <HeroSectionTwo/> 
     <ActivitySection/>
     <WorkSection/>
 

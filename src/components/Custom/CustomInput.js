@@ -9,12 +9,15 @@ const InputWrapper = styled.div`
     margin-top:3rem;
     align-items:center;`;
 const InputBox = styled.input`
-    width: 32rem;
+    width:100%;
+    max-width: 30rem;
+    min-width:26rem;
     height:3.4rem;
     border-radius: 1.8rem;
     border: 1.5px solid gray;
     padding-left: 2rem;
     color: gray;
+    outline:none;
     ${
         media.mobile`
         width:26rem;

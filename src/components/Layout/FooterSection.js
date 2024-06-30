@@ -11,7 +11,7 @@ const Container = styled.section`
         `}
     `;
 const Content = styled.div`
-  padding: 7.5rem 4.5rem;
+  margin: 7.5rem 4.5rem;
   display:flex;
     ${media.ipad`
         padding: 3.5rem 4.5rem;
@@ -28,7 +28,7 @@ const Right = styled.p`
   color:gray;`;
 const Image = styled.img``;
 const Text = styled.a`
-  padding:2rem 6rem;
+  padding:2rem 4rem;
   display:inline-block;
   color:gray;
   font-size:1.5rem;
@@ -41,7 +41,7 @@ const Logo = styled.div`
 const Options = styled.div`
   flex:2;`;
 const Email = styled.div`
-  flex:1;
+  flex:1.5;
  `;
 const Invite = styled.p`
   font-size:2rem;
@@ -76,12 +76,12 @@ function FooterSection() {
                     </Invite>
                     <LocalFireDepartmentIcon style={{color:'red',fontSize:'2.5rem'}}/>
               </InviteWrapper>
-              <CustomInput Width={'25rem'} marginTop={'1.5rem'}/>
+              <CustomInput  marginTop={'1.5rem'}/>
           </Email>
         </Content>
         <Declare>
           <Right>
-              Copyright 2023 by sea-log. All rights reserved.
+              Copyright 2024 by sea-log. All rights reserved.
           </Right>
         </Declare>
     </Container>
