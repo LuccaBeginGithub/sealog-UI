@@ -21,8 +21,8 @@ ${media.mobile`
 const CategoryImageWrapper = styled.div`
 display:flex;
 justify-content:space-between;
-margin-left:2rem;
-margin-right:2rem;
+margin-left:8rem;
+margin-right:8rem;
 ${media.mobile`
     flex-direction:column;
     justify-content:center;

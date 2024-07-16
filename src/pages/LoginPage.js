@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -78,6 +78,10 @@ const LoginPage = () => {
  const [email,setEmail] = useState('');
  const {setUserInfo,setIsLoggedIn} = useAuth();
  const navigate = useNavigate();
+
+ useEffect(() => {
+  window.scrollTo(0, 0)
+},[]);
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{

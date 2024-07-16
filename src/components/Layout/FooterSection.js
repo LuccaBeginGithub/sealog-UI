@@ -58,7 +58,7 @@ function FooterSection() {
         <hr/>
         <Content>
           <Logo>
-            <Image src='assets/images/logo.png'
+            <Image src='/assets/images/logo.png'
                       alt='logo' width={168} height={55}
                   />
           </Logo>

@@ -13,8 +13,9 @@ const Header = styled.div`
     `;
 
 const Title = styled.h1`
-    font-size:4rem;
+    font-size:3.5rem;
     font-weight:bold;
+    color:#2F3645;
     margin-bottom: 0;
     ${
         media.mobile`

@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import styled from 'styled-components';
 import product from '../models/product';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { CustomHeader } from '../components/Custom/CustomHeader';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StarIcon from '@mui/icons-material/Star';
@@ -13,6 +13,7 @@ import BedIcon from '@mui/icons-material/Bed';
 import { addBookingsByEmail } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import media from '../utilis/responsiveness';
+import CustomBackToTopButton from '../components/Custom/CustomBackToTopButton';
 
 
 const Conatiner = styled.div`
@@ -20,6 +21,16 @@ const Conatiner = styled.div`
  ${media.mobile`
     padding: 0 1.5rem 0 1.5rem;`}
 `;
+const LinkToPrev = styled.div`
+  display: flex;
+  align-items:center;
+`;
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: #373A40;
+    margin-right:5px;
+    font-weight:bold;
+    font-size:13px;`;
 const LocationText = styled.p`
 color:gray;
 margin-right:0.5rem;
@@ -222,11 +233,17 @@ const FeeTotal = styled.div`
     padding:0px 12px 0px 12px;
 `;
 const BookingPage = () => {
-    const [checkInDate, setCheckInDate] = useState(new Date(2024,1,20));
-    const [checkOutDate, setCheckOutDate] = useState(new Date(2024,1,21));
+    const [checkInDate, setCheckInDate] = useState(new Date());
+    let tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const [checkOutDate, setCheckOutDate] = useState(tomorrow);
     const [roomCount, setRoomCount] = useState(1);
     const navigate = useNavigate();
     const {userInfo,setUserInfo,isLoggedIn} = useAuth();
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      },[]);
   
     const { name} = useParams();
     let name1 = '';
@@ -285,7 +302,24 @@ const BookingPage = () => {
     let totalFee = hotel.discountPrice*roomCount*calculateDaysDifference(checkInDate,checkOutDate);
   return (
     <Conatiner>
-        <CustomHeader title={name} textAlign={'justify'}/>
+        <LinkToPrev>
+            <StyledLink to="/">
+                Home
+            </StyledLink>
+            <p>
+                {" > "}
+            </p>
+            <StyledLink to={`/stays/search?destination=${hotel.location}`}>
+                {hotel.location}
+            </StyledLink>
+            <p>
+                {" > "}
+            </p>
+            <p>
+                {hotel.name}
+            </p>
+        </LinkToPrev>
+        <CustomHeader title={name} textAlign={'justify'} />
             <div style={{display:'flex',justifyContent:'flex-start'}}>
                 <Rating>
                     <StarIcon style={{color:'gold'}}/>
@@ -305,12 +339,12 @@ const BookingPage = () => {
             </div>
             <ImageBox>
                 <MainImage>
-                    <Image src = {'/' + hotel.src}/>
+                    <Image src = {hotel.src}/>
                 </MainImage>
                 <SubImage>
-                <ImageSmall src = {'/' + hotel.src}/>
-                <ImageSmall src = {'/' + hotel.src}/>
-                <ImageSmall src = {'/' + hotel.src}/>
+                <ImageSmall src = {hotel.src}/>
+                <ImageSmall src = {hotel.src}/>
+                <ImageSmall src = {hotel.src}/>
                 </SubImage>
             </ImageBox>
             <Wrapper>
@@ -409,6 +443,7 @@ const BookingPage = () => {
                     </BookingForm>
                 </BookingFormWrapper>
             </Wrapper>
+            <CustomBackToTopButton/>
 
     </Conatiner>
   )

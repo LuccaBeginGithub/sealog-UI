@@ -8,7 +8,6 @@ import { NavLink,Link} from 'react-router-dom';
 
 const Container = styled.section`
     background-color:#ECF4D6;
-    
     width:100%;
     height:150px;
     margin-bottom:2rem;
@@ -99,7 +98,7 @@ function HeaderSection() {
     <Container>
         <Wrapper>
             <Logo>
-                <Image src='assets/images/logo.png'
+                <Image src='/assets/images/logo.png'
                     alt='logo' 
                 />
             </Logo>

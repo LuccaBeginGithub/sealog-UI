@@ -9,7 +9,7 @@ const Container = styled.section``;
 const CardGrid = styled.div`
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  padding: 0rem 3rem 1.5rem 1.5rem;
+  padding: 0rem 5rem 1.5rem 3.5rem;
   ${media.mobile`
     grid-template-columns:repeat(1,1fr);
   `

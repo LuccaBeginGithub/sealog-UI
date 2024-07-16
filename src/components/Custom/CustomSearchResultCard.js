@@ -111,6 +111,7 @@ border-radius:18px;
 border: 1px solid white;
 padding: 0.8rem 2rem;
 height:4rem;
+cursor: pointer;
 text-align:center;
     color:white;
     font-size:1.4rem;
@@ -146,7 +147,7 @@ const CustomSearchResultCard = ({item}) => {
             <Image src = {src}/>
         </ImageWrapper>
         <TextWrapper>
-            <InfoText>
+            <InfoText onClick={directToBookingPage}>
                 {name}
             </InfoText>
             <DetailsWrapper>

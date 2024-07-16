@@ -9,6 +9,7 @@ import HotelPage from './pages/HotelPage';
 import TodoPage from './pages/TodoPage';
 import BookingPage from './pages/BookingPage';
 import ProfilePage from './pages/ProfilePage';
+import SearchResultPage from './pages/SearchResultPage';
 import HeaderSection from './components/Layout/HeaderSection';
 import FooterSection from './components/Layout/FooterSection';
 import PrivateRoute from './context/PrivateRoute';
@@ -27,6 +28,7 @@ function App() {
           <Route path='/restaurants' element = {<RestaurantPage/>}/>
           <Route path='/todo' element = {<TodoPage/>}/>
           <Route path='/stays/:name' element = {<BookingPage/>}/>
+          <Route path='/stays/search' element = {<SearchResultPage/>}/>
           <Route 
             path='/profile' 
             element={

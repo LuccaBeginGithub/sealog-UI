@@ -55,6 +55,8 @@ const HotelSection = () => {
       }
     }]
   }
+
+  
   return (
     <Container>
         <CustomHeader textAlign={'left'} title={'Book the Best Hotels'} description={'excitement begins here'}/>
@@ -63,7 +65,7 @@ const HotelSection = () => {
             {product.map((data,index)=>(<CustomProductCard data = {data} key={index}/>))}
         </StyledSlider>
         <ViewAll>
-        <CustomButton title={'View all'} padding={'0rem 3rem'} border={'1.3px solid gray'}/>
+        <CustomButton  title={'View all'} padding={'0rem 3rem'} border={'1.3px solid gray'}/>
         </ViewAll>
     </Container>
   )

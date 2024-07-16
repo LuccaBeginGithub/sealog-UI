@@ -7,6 +7,7 @@ import HotelSection from '../components/HomePage/HotelSection';
 import HeroSectionTwo from '../components/HomePage/HeroSectionTwo';
 import ActivitySection from '../components/HomePage/ActivitySection';
 import FooterSection from '../components/Layout/FooterSection';
+import CustomBackToTopButton from '../components/Custom/CustomBackToTopButton';
 export const HomePage = () => {
   return (
   <div>
@@ -18,7 +19,7 @@ export const HomePage = () => {
     <HeroSectionTwo/> 
     <ActivitySection/>
     <WorkSection/>
-
+    <CustomBackToTopButton/>
     </div>
     
   )

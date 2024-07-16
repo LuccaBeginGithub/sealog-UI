@@ -69,9 +69,8 @@ const HeroSectionOne = () => {
             </Desc>
             <Link to="/stays">
                 <CustomButton title={'Find Now'} 
-                    backgroundColor={'#FFFFDD'} 
-                    padding={'0rem 3.5rem'} 
-                    border={'2px solid #9AD0C2'}/>
+                     padding={'0rem 3.5rem'} 
+                    />
             </Link>
         </InfoContainer>
     </Container>

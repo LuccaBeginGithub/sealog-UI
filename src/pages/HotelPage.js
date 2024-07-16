@@ -6,9 +6,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BedIcon from '@mui/icons-material/Bed';
-import SearchResultPage from '../components/HotelPage/SearchResultPage';
+import CustomBackToTopButton from '../components/Custom/CustomBackToTopButton';
 import ProductPageHeroSection from '../components/Layout/ProductPageHeroSection';
 import media from '../utilis/responsiveness';
+import { useNavigate } from 'react-router-dom';
 
 const FormWrapper = styled.div`
   width:100%;
@@ -76,21 +77,21 @@ outline:none;
 const StyledSelect = styled.select`
 width:14rem;
 text-align:center;
-color:gray;
+color:gray; 
 border-radius:8px;
 border: 1px solid gray;
 outline:none;`;
 const HotelPage = () => {
   const [location, setLocation] = useState();
-  const [checkInDate, setCheckInDate] = useState(new Date(2024,1,20));
-  const [checkOutDate, setCheckOutDate] = useState(new Date(2024,1,21));
+  const [checkInDate, setCheckInDate] = useState(new Date());
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const [checkOutDate, setCheckOutDate] = useState(tomorrow);
   const [roomCount, setRoomCount] = useState(1);
   const [destination, setDestination] = useState();
   const [category, setCategory] = useState();
-  const [content, setContent] = useState(
-    <DefaultInfoSection setDestination={setDestination} setCategory={setCategory} />
-  );
-
+ 
+  const navigate  = useNavigate();
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
   };
@@ -116,24 +117,21 @@ const HotelPage = () => {
 
   useEffect(() => {
     if (destination) {
-      setContent(<SearchResultPage 
-      destination={destination}
-      />);
+      navigate(`/stays/search?destination=${destination}`);
     } else if (category) {
-      setContent(<SearchResultPage 
-      category={category}
-       />);
+      navigate(`/stays/search?category=${category}`);
     }
-  }, [destination, category]); 
+  }, [destination, category,navigate]); 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  },[]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Perform any validation or submission logic here
     if (location && checkInDate && checkOutDate && roomCount) {
-      setContent(<SearchResultPage 
-      location={location}
-       />);  
+      setDestination(location);  
     }else{
       alert('Please fill in all fields.');
     }
@@ -193,8 +191,9 @@ const HotelPage = () => {
       <FormButton type="submit" >Search</FormButton>
     </StyledForm>
     </FormWrapper>
-
-      {content}
+    <DefaultInfoSection setDestination={setDestination} setCategory={setCategory} />
+    <CustomBackToTopButton/>
+  
     </main>
   );
 }
