@@ -55,6 +55,7 @@ const HotelSection = () => {
       }
     }]
   }
+  const firstfiveproduct = product.slice(0,5);
 
   
   return (
@@ -62,7 +63,7 @@ const HotelSection = () => {
         <CustomHeader textAlign={'left'} title={'Book the Best Hotels'} description={'excitement begins here'}/>
         
         <StyledSlider {...settings}>
-            {product.map((data,index)=>(<CustomProductCard data = {data} key={index}/>))}
+            {firstfiveproduct.map((data,index)=>(<CustomProductCard data = {data} key={index}/>))}
         </StyledSlider>
         <ViewAll>
         <CustomButton  title={'View all'} padding={'0rem 3rem'} border={'1.3px solid gray'}/>
