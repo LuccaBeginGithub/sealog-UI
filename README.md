@@ -1,7 +1,7 @@
 # Sealog - Travel Booking Website
 
 Welcome to the sealog Website! This React application provides users with information on various beach locations and allows them to book accommodations at these destinations. The site integrates with MongoDB Atlas for data storage and a .NET API for backend services. 
-![image](https://github.com/user-attachments/assets/7e5a4552-6d2a-472b-ad5f-2616ad4e662d)
+
 
 ## Features
 
