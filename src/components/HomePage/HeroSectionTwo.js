@@ -33,17 +33,22 @@ const ImageWrapper = styled.div`
     margin-left:7rem;
     ${media.ipadAir`
         margin:9.5rem 0 0 0;`}
+    ${media.mobile`
+        width:100%;
+        overflow:hidden;
+    `}    
     `;
 const Image = styled.img`
     width:63rem;
     height:38rem;
     object-fit:contain;
-    ${media.mobile`
-        width:30rem;
-        height:24rem;`}
+    
     ${media.ipad`
         width:48rem;
         height:36rem;`}
+    ${media.mobile`
+        width:30rem;
+        height:24rem;`}
         `;
 const Description = styled.p`
     color:gray;
