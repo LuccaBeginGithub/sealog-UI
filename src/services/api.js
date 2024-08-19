@@ -1,7 +1,7 @@
 import axios from 'axios';
-
 const apiURL = process.env.REACT_APP_API_ENDPOINT;
-console.log(apiURL);
+
+
 
 
 export const createPerson = async (data) => {
